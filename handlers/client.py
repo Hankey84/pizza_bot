@@ -25,8 +25,8 @@ async def pizza_place_command(message: types.Message):
 #      for ret in cur.execute('SELECT * FROM menu').fetchall():
 #          await bot.send_photo(message.from_user.id, ret[0], f'{ret[1]}\nОписание: {ret[2]}\Цена" {ret[-1\]})
 
+# Функция для последующей регистраци клиентских хэндлеров в основном файле
 def register_handlers_client(dp : Dispatcher):
-    # Функция для последующей регистраци клиентских хэндлеров в основном файле
     dp.register_message_handler(command_start, commands=['start', 'help'])    
     dp.register_message_handler(pizza_open_command, commands=['Режим_работы', 'режим_работы'])
     dp.register_message_handler(pizza_place_command, commands=['Расположение', 'расположение'])
