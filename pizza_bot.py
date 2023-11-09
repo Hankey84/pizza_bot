@@ -1,10 +1,12 @@
 from aiogram.utils import executor
 from create_bot import dp
+from data_base import sqlite_db
 
 
 async def on_startup(_):
     # Здесь будут выводиться данные при запуске бота в терминал
     print("Бот вышел в онлайн")
+    sqlite_db.sql_start() # Запуск модуля базы данных
 
 from handlers import client, admin, other
 
